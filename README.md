@@ -143,5 +143,5 @@ UserApi.Tests/     → Projeto de testes unitários (xUnit + Moq)
 ## 💬 Contato
 
 Feito por [Michele Rocha] ✨  
-LinkedIn: [linkedin.com/in/seu-perfil](https://linkedin.com/in/seu-perfil)  
+LinkedIn: [linkedin.com/in/enc-michele-rocha/](https://www.linkedin.com/in/enc-michele-rocha/)  
 Email: mr.michelerocha@gmail.com
