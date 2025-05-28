@@ -1,6 +1,6 @@
 # 🔐 UserApi com PokéVibes + JWT
 
-API REST em ASP.NET Core com autenticação JWT, integração com PokéAPI externa e persistência em SQLite. Feita para impressionar em qualquer teste técnico. 😎
+API REST em ASP.NET Core com autenticação JWT, integração com PokéAPI externa e persistência em SQLite. 😎
 
 ---
 
@@ -79,7 +79,6 @@ Authorization: Bearer {token}
 | Método | Rota                     | Descrição                        |
 |--------|--------------------------|----------------------------------|
 | GET    | /api/User/{id}           | Consulta usuário específico      |
-| GET    | /api/User/protegido      | Rota teste com [Authorize]       |
 
 ---
 
