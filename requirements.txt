@@ -1,7 +1,7 @@
 # ✅ Requisitos para rodar o projeto UserApi (.NET + JWT + PokéAPI)
 
 # Instalar .NET SDK 8.0 se necessário:
-# https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+# https://dotnet.microsoft.com/en-us/download/dotnet/8.0 
 
 # 📦 Pacotes obrigatórios
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite
