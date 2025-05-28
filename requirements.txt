@@ -1,0 +1,68 @@
+# ✅ Requisitos para rodar o projeto UserApi (.NET + JWT + PokéAPI)
+
+# Instalar .NET SDK 8.0 se necessário:
+# https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+
+# 📦 Pacotes obrigatórios
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.5
+
+# 📁 Estrutura recomendada UserApi
+mkdir Models
+mkdir Data
+mkdir Dtos
+mkdir Services
+mkdir Controllers
+
+# 🧱 Entity Framework Core
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+# 🔄 Restaurar e rodar o projeto
+dotnet restore
+dotnet build
+dotnet run
+
+# 📍 Acesse a Swagger UI:
+http://localhost:5122/swagger
+
+# 🧪 Endpoint de login
+POST http://localhost:5122/api/auth/login
+Body (JSON):
+{
+  "email": "admin@pokevibes.com",
+  "senha": "123456"
+}
+
+# O retorno será:
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR..."
+}
+
+# Copie esse token e use nos endpoints protegidos como Bearer Token:
+Authorization: Bearer {SEU_TOKEN}
+
+# 🔐 Endpoints protegidos por JWT:
+- GET    /api/User/{id}
+- GET    /api/User/protegido
+
+# ✅ Endpoints públicos (não precisam token):
+- GET    /api/User
+- POST   /api/User
+- PUT    /api/User/{id}
+- DELETE /api/User/{id}
+- GET    /api/pokemon/{name}
+
+# ✅ Dependências para testes unitários
+dotnet new xunit -n UserApi.Tests
+dotnet sln add UserApi.Tests/UserApi.Tests.csproj
+dotnet add UserApi.Tests/UserApi.Tests.csproj reference UserApi/UserApi.csproj
+
+dotnet add UserApi.Tests package xunit
+dotnet add UserApi.Tests package Moq
+dotnet add UserApi.Tests package Microsoft.NET.Test.Sdk
+dotnet add UserApi.Tests package Microsoft.AspNetCore.Mvc.Testing --version 8.0.5
+
+# Executar testes
+dotnet test
